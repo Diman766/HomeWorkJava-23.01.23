@@ -1,28 +1,17 @@
 public class task2 {
     public static void main(String[] args) {
-        int a = 3;
-        int b = 9;
-        int c = 2;
-        int d = 3;
-        int count = 0;
-        int degree = 1;
-        if (b % d == 0) {
-            count += 1;
+        System.out.println(worker(2, 9));
+    }
+
+    public static int worker(int a, int b) {
+        if (a == b) {
+            return 1;
         }
-        while (a * c * degree < b) {
-            if ((b - (a * c * degree)) % d == 0) {
-                count += 1;
-            }
-            degree += 1;
+        if (a > b) {
+            return 0;
+        } else {
+            return worker(a + 1, b) + worker(a * 2, b);
         }
 
-        while ((a + d) * c < b) {
-            if ((a + d) * c < b) {
-                count += 1;
-
-            }
-            d += d;
-        }
-        System.out.println(count);
     }
 }
